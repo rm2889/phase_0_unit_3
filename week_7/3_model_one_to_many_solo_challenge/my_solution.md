@@ -43,6 +43,8 @@ The relationship between `users` and `tweets` is: one-to-many. A single tweet ha
   * follower_id
   * leader_id
 
+  ### ![Alt text](../imgs/solo_challenge_twitter.png)
+
 
 This is the table than enables a many-to-many relationship between followers and leaders
 
