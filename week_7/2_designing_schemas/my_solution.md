@@ -5,18 +5,18 @@
 
 
 ## Release 0: Student Roster Schema
-<!-- display your image inline here -->
-
+### ![Alt text](../imgs/students_table.png)
 
 ## Release 1: One to Many Schema
-<!-- display your image inline here -->
-
+### ![Alt text](../imgs/one_to_many.png)
 
 ## Release 2: One to One Schema
+### ![Alt text](../imgs/one_to_one.png)
 <!-- display your image inline here -->
 
 
 ## Release 3: Many to Many Schema
+### ![Alt text](../imgs/many_to_many.png)
 <!-- display your image inline here -->
 
 
@@ -27,3 +27,4 @@ Description of what you're modeling:
 <!-- display your many-to-many image inline here -->
 
 ## Release 5: Reflection
+#### Skipped the modeling of my own schema - will come back to it later. Other than that, this exercise seemed pretty easy - nothing out of the ordinary here :)
