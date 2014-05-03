@@ -26,30 +26,42 @@ var scores = [ [80, 70, 70, 100],
 // __________________________________________
 // Write your code below.
 
+// Release 0 and 1
+var average = function(number_array) {
+  running_total = 0;
+  length = number_array.length;
+  for (var i = 0; i < length; i++) {
+    running_total += number_array[i];
+  }
+  return running_total/length;
+}
 
+// Release 2, 3 and 4
+var gradebook = {};
+var students_length = students.length;
+for (var i = 0; i < students_length; i++) {
+  gradebook[students[i]] = {};
+  gradebook[students[i]]["testScores"] = scores[i];
+}
 
+// Release 5
+gradebook["addScore"] = function(name, score) {
+  return gradebook[name]["testScores"].push(score);
+}
 
+// Release 6 and 7
+gradebook["getAverage"] = function(name) {
+  return average(gradebook[name]["testScores"]);
+}
 
 
 // __________________________________________
 // Refactored Solution
 
 
-
-
-
-
-
-
 // __________________________________________
 // Reflect
-
-
-
-
-
-
-
+// Was a pretty straightforward exercise - good practice in accessing and setting objects
 
 
 // __________________________________________
