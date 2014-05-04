@@ -3,6 +3,7 @@
 // I worked on this challenge [by myself, with:]
 
 // These are the votes cast by each student. Do not alter these objects here.
+
 var votes = {
   "Alex": { president: "Bob", vicePresident: "Devin", secretary: "Gail", treasurer: "Kerry" },
   "Bob": { president: "Mary", vicePresident: "Hermann", secretary: "Fred", treasurer: "Ivy" },
@@ -64,13 +65,79 @@ var officers = {
 }
 
 // Pseudocode
+/*
+for (var key in votes) {
+  var vote = votes[key];
+  if vote[president] in voteCount[president] {
+    voteCount[president][vote[president]]+=1
+  }
+  else {
+    voteCount[president][vote[president]] = 1
+  }
+  
+  Do the same for all other positions( vicePresident, secretary, treasurer)
+}
 
+Second step is to get the key associated with the max value of president, vp, etc.
+for (var position in voteCount) {
+  var maxVotes = 0;
+  var maxKey;
+  for (var candidate in voteCount[position]) {
+    if (voteCount[position][candidate]>maxVotes) {
+      maxVotes = voteCount[position][candidate];
+      maxKey = candidate;
+      }
+    else {
+      //do nothing
+    }
+  }
+  officers[position]=maxKey;
+}
+*/
 
 // __________________________________________
 // Initial Solution
 
+for (var key in votes) {
+  var vote = votes[key];
+  if (voteCount["president"].hasOwnProperty(vote["president"])) {
+    voteCount["president"][vote["president"]]+=1
+  }
+  else {
+    voteCount["president"][vote["president"]] = 1
+  }
+  if (voteCount["vicePresident"].hasOwnProperty(vote["vicePresident"])) {
+    voteCount["vicePresident"][vote["vicePresident"]]+=1
+  }
+  else {
+    voteCount["vicePresident"][vote["vicePresident"]] = 1
+  }
+  if (voteCount["secretary"].hasOwnProperty(vote["secretary"])) {
+    voteCount["secretary"][vote["secretary"]]+=1
+  }
+  else {
+    voteCount["secretary"][vote["secretary"]] = 1
+  }
+  if (voteCount["treasurer"].hasOwnProperty(vote["treasurer"])) {
+    voteCount["treasurer"][vote["treasurer"]]+=1
+  }
+  else {
+    voteCount["treasurer"][vote["treasurer"]] = 1
+  }
+  // console.log(vote["president"]);
+}
 
-
+for (var position in voteCount) {
+  var maxVotes = 0;
+  var maxKey;
+  for (var candidate in voteCount[position]) {
+    if (voteCount[position][candidate]>maxVotes) {
+      maxVotes = voteCount[position][candidate];
+      maxKey = candidate;
+      }
+    }
+  officers[position]=maxKey;
+}
 
 
 
@@ -85,6 +152,10 @@ var officers = {
 
 // __________________________________________
 // Reflection
+/*
+Fairly straightforward implementation of looping and nested looping
+
+*/
 
 
 
