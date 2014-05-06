@@ -35,14 +35,14 @@ end
 def print_politicians_votes
 	puts "Representatives and the number of votes they received"
 # output should look like:  Sen. John McCain - 7,323 votes (This is an example, yours
-	reps_and_votes = $db.execute("select politician_id, count(voter_id), name from votes inner join congress_members on congress_members.id = votes.politician_id group by politician_id;")
+	reps_and_votes = $db.execute("SELECT politician_id, count(voter_id), name FROM votes INNER JOIN congress_members ON congress_members.id = votes.politician_id GROUP BY politician_id;")
 	reps_and_votes.each {|id, num_votes, name| puts name + " - " + num_votes.to_s + " votes"}
 end
 
 def print_politician_voters
 	puts "# A listing of each Politician and the voter that voted for them"
 	# output should include the senators name, then a long list of voters separated by a comma"
-	reps_and_voters = $db.execute("select name, group_concat(first_name || ' ' || last_name ,', ') from votes inner join voters on voters.id = votes.voter_id inner join congress_members on congress_members.id = votes.politician_id group by politician_id;")
+	reps_and_voters = $db.execute("SELECT name, GROUP_CONCAT(first_name || ' ' || last_name ,', ') FROM votes INNER JOIN voters ON voters.id = votes.voter_id INNER JOIN congress_members ON congress_members.id = votes.politician_id GROUP BY politician_id;")
 	reps_and_voters.each {|name,voters| puts name + " - " + voters}
 end
 
@@ -51,7 +51,6 @@ def print_separator
   puts "------------------------------------------------------------------------------"
   puts 
 end
-
 
 print_arizona_reps
 
