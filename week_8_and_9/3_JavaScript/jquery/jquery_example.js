@@ -10,36 +10,41 @@ $(document).ready(function(){
   $('h1').css("border", "1px solid black");
   $('h1').css("visibility", "visible");
 
-console.log($('.mascot').find('h1'));
+// alert($('.mascot h1').text("NEW TEXT"));
 
-  
-
-  // var classElement = $('.mascot').html();
-  // $('div.mascot').text("New text");
-   // console.log($('.mascot').html("adad"));
-
+// This works too!
+// $('.mascot h1').text("NEW TEXT");
+$('.mascot').find("h1").text("sup");
  
 //RELEASE 3: Event Listener
   // Add the code for the event listener here 
 
-$('img').on('mouseover', function(e){
+$('img').on('click', function(e){
+     e.preventDefault()
+    // $(this).attr('src', 'http://img4.wikia.nocookie.net/__cb20121226035921/bones/images/b/b4/Zooey_Deschanel-ALO-058492.jpg')
+    $(this).animate({
+      opacity: 0.25
+    })    
+  })
+
+$('img').on('mouseenter', function(e){
      e.preventDefault()
     $(this).attr('src', 'http://img4.wikia.nocookie.net/__cb20121226035921/bones/images/b/b4/Zooey_Deschanel-ALO-058492.jpg')
   })
 
-$('img').on('mouseout', function(e){
-     e.preventDefault()
-    $(this).attr('src', 'dbc_logo.jpg')
-  })
+$('img').mouseleave(function() {
+  $(this).attr('src','dbc_logo.jpg')
+})
  
  
 //RELEASE 4 : Experiment on your own
  
- 
- 
- 
- 
- 
+ // $('img').click(function() {
+ //  $(this).animate({
+ //    opacity = 0.25;
+ //  }
+ // })
+
 // end of the document.ready function: do not remove or write DOM manipulation below this.
 
 })
