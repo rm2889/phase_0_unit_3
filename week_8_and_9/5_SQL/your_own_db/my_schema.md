@@ -1,0 +1,1 @@
+![Alt text](my_schema.png "Optional title")
